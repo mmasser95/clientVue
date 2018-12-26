@@ -1,9 +1,14 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+  #app.container-fluid
+    .jumbotron
+      h1.text-center="App"
+    .row
+      .col-lg
+      .col-lg-6
+        HelloWorld(msg="Table")
+      .col-lg
 </template>
+
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
@@ -17,12 +22,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
