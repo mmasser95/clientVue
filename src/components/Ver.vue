@@ -12,18 +12,13 @@
           v-on:click="getInquilinos"
         )="Inquilinos"
       
-    table.table.table-striped
-      tr
-        th(v-for="t in ths")="{{t}}"
-      tr(v-for="item in items")
-        td(v-if="w==='pisos'")="{{item.direccion}}"
-        td(v-if="w==='pisos'")="{{item.renta}}"
-        td(v-if="w==='pisos'")
-          router-link(:to="'/verpiso/'+item._id")="Link"
-        td(v-if="w==='inquilinos'")="{{item.email}}"
-        td(v-if="w==='inquilinos'")="{{item.direccion}}"
-        td(v-if="w==='inquilinos'")
-          router-link(:to="'/verinquilino/'+item._id")="Enviar"
+    
+    b-table(
+      striped,
+      hover,
+      :items="items",
+      :fields="ths"
+    )
         
 </template>
 
@@ -44,14 +39,14 @@ export default {
     getPisos(){
       apiService.getPisos().then((data) => {
         this.items=data.pisos
-        this.ths=["Direccion", "Renta", "Link"]
+        this.ths=["_id","direccion", "renta"]
         this.w="pisos"
       })
     },
     getInquilinos(){
       apiService.getInquilinos().then((data) => {
         this.items=data.inquilinos
-        this.ths=["Email", "Direccion", "Ver"]
+        this.ths=["email", "direccion"]
         this.w="inquilinos"
       })
     },

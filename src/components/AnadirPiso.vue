@@ -26,6 +26,24 @@
           required,
           placeholder="€/mes"
         )
+      b-form-group#tipo-g(
+        label="Tipo: ",
+        label-for="tipo"
+      )
+        b-form-select#tipo(
+          v-model="form.tipo",
+          :options="datatipo"
+        )
+      b-form-group#descripcion-g(
+        label="Descripción: "
+        label-for="descripcion"
+      )
+        b-form-textarea#descripcion(
+          v-model="form.descripcion",
+          placeholder="Introduce una descripción",
+          :rows=3,
+          :max-rows=6
+        )
       b-button(
         type="submit",
         variant="primary"
@@ -42,8 +60,14 @@ export default {
     return{
       form:{
         direccion:'',
-        renta:0
+        renta:0,
+        tipo:null,
+        descripcion:''
       },
+      datatipo:[
+        {value:"Piso", text:"Piso"},
+        {value:"Adosado", text:"Adosado"}
+      ],
       show:true
     }
   },

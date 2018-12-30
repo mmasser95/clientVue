@@ -13,7 +13,7 @@
           )
             b-dropdown-item
               router-link.nav-link(to="/anadirpiso")="Añadir Piso"
-      .col-lg-8
+      .col-lg-9
         router-view
       .col-lg
 </template>

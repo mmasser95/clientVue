@@ -22,6 +22,10 @@ export class APIService{
         const url=`${API_URL}/piso/${ids}`;
         return axios.get(url).then(response=>response.data);
     }
+    getInquilino(ids){
+        const url=`${API_URL}/inquilino/${ids}`;
+        return axios.get(url).then(response=>response);
+    }
     postPiso(data){
         const url=`${API_URL}/piso`;
         return axios.post(url,data).then(response=>response.data);

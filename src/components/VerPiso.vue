@@ -5,7 +5,11 @@
       .card-header
         h2.text-center="{{item.direccion}}"
       .card-body
-        p="La renta del piso es de {{item.renta}}€"
+        .row
+          .col-lg
+            p="{{item.descripcion}}"
+          .col-lg
+            h3.text-center="{{item.renta}}€"
       .card-footer
         p.text-secondary.text-center="{{item.tipo}}"
 
