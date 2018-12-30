@@ -18,4 +18,12 @@ export class APIService{
         const url=`${API_URL}/propietario`;
         return axios.get(url).then(response=>response.data);
     }
+    getPiso(ids){
+        const url=`${API_URL}/piso/${ids}`;
+        return axios.get(url).then(response=>response.data);
+    }
+    postPiso(data){
+        const url=`${API_URL}/piso`;
+        return axios.post(url,data).then(response=>response.data);
+    }
 }

@@ -1,16 +1,18 @@
 <template lang="pug">
-  #app.container-fluid
-    .jumbotron
-      h1.text-center="Aplicación"
+  #app.container
+    b-jumbotron(header="App")
     .row
       .col-lg-2
-        ul.nav.flex-column.nav-pills.text-center
-          li.nav-item
+        b-nav.w-100(vertical)
+          b-nav-item
             router-link.nav-link(to="/home")="Index"
-          li.nav-item
+          b-nav-item
             router-link.nav-link(to="/ver")="Tabla"
-          li.nav-item
-            router-link.nav-link(to='/add')="Añadir"
+          b-nav-item-dropdown#ddown1.w-100(
+            text="Añadir"
+          )
+            b-dropdown-item
+              router-link.nav-link(to="/anadirpiso")="Añadir Piso"
       .col-lg-8
         router-view
       .col-lg
