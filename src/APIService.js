@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL='http://192.168.1.17:3000'
+const API_URL='https://apigestionl4l.herokuapp.com'
 export class APIService{
     constructor(){}
     getPisos() {
