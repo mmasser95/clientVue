@@ -3,7 +3,7 @@
     .container-fluid
       .card
         .card-header
-          h2.text-center="{{item.nombre}}"
+          h2.text-center="{{item.nombre}} {{item.apellidos}}"
         .card-body
           p.card-text="Direccion: {{item.direccion}}"
         .card-footer

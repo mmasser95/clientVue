@@ -14,11 +14,18 @@
       
     
     b-table(
-      striped,
       hover,
+      responsive,
       :items="items",
       :fields="ths"
     )
+      template(
+        slot="link",
+        slot-scope="data"
+        variant="info"
+      )
+        router-link.btn.btn-primary(:to='"/verpiso/"+data.item._id', v-if="w==='pisos'")="Ver Piso"
+        router-link.btn.btn-primary(:to='"/verinquilino/"+data.item._id', v-if="w==='inquilinos'")="Ver Inquilino"
         
 </template>
 
@@ -39,14 +46,14 @@ export default {
     getPisos(){
       apiService.getPisos().then((data) => {
         this.items=data.pisos
-        this.ths=["_id","direccion", "renta"]
+        this.ths=["_id","direccion", "renta",{key:"link", label:"Link"}]
         this.w="pisos"
       })
     },
     getInquilinos(){
       apiService.getInquilinos().then((data) => {
         this.items=data.inquilinos
-        this.ths=["email", "direccion"]
+        this.ths=["email", "direccion",{key:"link", label:"Link"}]
         this.w="inquilinos"
       })
     },

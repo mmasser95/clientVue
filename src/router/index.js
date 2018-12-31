@@ -6,6 +6,7 @@ import Ver from '@/components/Ver';
 import VerPiso from '@/components/VerPiso';
 import VerInquilino from '@/components/VerInquilino';
 import AnadirPiso from '@/components/AnadirPiso';
+import AnadirInquilino from '@/components/AnadirInquilino';
 
 Vue.use(Router);
 
@@ -32,6 +33,10 @@ export default new Router({
         {
             path:'/anadirpiso',
             component: AnadirPiso,
+        },
+        {
+            path:'/anadirinquilino',
+            component: AnadirInquilino
         }
     ],
     linkActiveClass:'active',

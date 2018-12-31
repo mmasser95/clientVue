@@ -44,7 +44,7 @@
           :rows=3,
           :max-rows=6
         )
-      b-button(
+      b-button.w-100(
         type="submit",
         variant="primary"
         )="Enviar"
@@ -74,9 +74,8 @@ export default {
   methods:{
     sub(event){
       event.preventDefault();
-      alert(JSON.stringify(this.form))
       apiService.postPiso(this.form).then((data) => {
-        alert(JSON.stringify(data.status))
+        alert(JSON.stringify(data))
       })
     },
     reset(){
