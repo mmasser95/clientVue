@@ -5,6 +5,8 @@ import Home from '@/components/Home';
 import Ver from '@/components/Ver';
 import VerPiso from '@/components/VerPiso';
 import VerInquilino from '@/components/VerInquilino';
+import VerInmueble from '@/components/VerInmueble';
+import VerPropietario from '@/components/VerPropietario';
 import AnadirPiso from '@/components/AnadirPiso';
 import AnadirInquilino from '@/components/AnadirInquilino';
 
@@ -28,6 +30,16 @@ export default new Router({
         {
             path:'/verinquilino/:id',
             component:VerInquilino,
+            props:true
+        },
+        {
+            path:'/verinmueble/:id',
+            component:VerInmueble,
+            props:true
+        },
+        {
+            path:'/verpropietario/:id',
+            component:VerPropietario,
             props:true
         },
         {

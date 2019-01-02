@@ -5,7 +5,26 @@
         .card-header
           h2.text-center="{{item.nombre}} {{item.apellidos}}"
         .card-body
-          p.card-text="Direccion: {{item.direccion}}"
+          .row
+            .col-lg-3
+            .col-lg
+              table.table
+                tr
+                  th="Direccion: "
+                  td="{{item.direccion}}"
+                tr
+                  th="Poblacion: "
+                  td="{{item.poblacion}}"
+                tr
+                  th="CP: "
+                  td="{{item.cp}}"
+                tr
+                  th="Provincia: "
+                  td="{{item.provincia}}"
+                
+            
+         
+          
         .card-footer
           p.text-center.text-secondary="{{item.email}}"
 </template>
