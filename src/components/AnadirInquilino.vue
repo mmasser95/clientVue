@@ -199,7 +199,7 @@
       b-button.w-100(
         type="submit",
         variant="primary"
-      )="Enviar"
+      )="Añadir Inquilino"
         
 </template>
 

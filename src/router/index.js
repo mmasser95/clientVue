@@ -7,8 +7,10 @@ import VerPiso from '@/components/VerPiso';
 import VerInquilino from '@/components/VerInquilino';
 import VerInmueble from '@/components/VerInmueble';
 import VerPropietario from '@/components/VerPropietario';
+import VerReserva from '@/components/VerReserva';
 import AnadirPiso from '@/components/AnadirPiso';
 import AnadirInquilino from '@/components/AnadirInquilino';
+import AnadirInmueble from '@/components/AnadirInmueble';
 
 Vue.use(Router);
 
@@ -43,12 +45,21 @@ export default new Router({
             props:true
         },
         {
+            path:'/verreserva/:id',
+            component:VerReserva,
+            props:true
+        },
+        {
             path:'/anadirpiso',
             component: AnadirPiso,
         },
         {
             path:'/anadirinquilino',
             component: AnadirInquilino
+        },
+        {
+            path:'/anadirinmueble',
+            component: AnadirInmueble
         }
     ],
     linkActiveClass:'active',

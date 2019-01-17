@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL='https://apigestionl4l.herokuapp.com'
+const API_URL='http://192.168.1.20:3000'
 export class APIService{
     constructor(){}
     getPisos() {
@@ -42,12 +42,20 @@ export class APIService{
         const url=`${API_URL}/propietario/${ids}`;
         return axios.get(url).then(response=>response);
     }
+    getReserva(ids){
+        const url=`${API_URL}/reserva/${ids}`;
+        return axios.get(url).then(response=>response);
+    }
     postPiso(data){
         const url=`${API_URL}/piso`;
         return axios.post(url,data).then(response=>response.data);
     }
     postInquilino(data){
         const url=`${API_URL}/inquilino`;
+        return axios.post(url,data).then(response=>response.data);
+    }
+    postInmueble(data){
+        const url=`${API_URL}/inmueble`;
         return axios.post(url,data).then(response=>response.data);
     }
 }
